@@ -79,24 +79,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="nb-logo">T</div>
     <div>
       <div class="nb-title">Tesco Retail Productivity Dashboard</div>
-      
+      <div class="nb-sub">Simulated data · not affiliated with Tesco</div>
     </div>
   </div>
   <div class="nb-right">
-    <div class="nb-badge">2023 Annual Report</div>
+    <div class="nb-badge">Simulated · 2023</div>
     <div class="nb-name">Praneet Sivakumar</div>
   </div>
 </div>
 
 <div class="filters">
-  <span class="fl">Filter by</span>
-  <div class="fp on">All Stores</div>
-  <div class="fp on">All Categories</div>
-  <div class="fp on">Fulfilled Only</div>
-  <div class="fp q">Q1 Jan–Mar</div>
-  <div class="fp q">Q2 Apr–Jun</div>
-  <div class="fp q">Q3 Jul–Sep</div>
-  <div class="fp q">Q4 Oct–Dec</div>
+  <span class="fl">All 8 stores · all categories · full year 2023 · revenue counts fulfilled orders only · figures match tesco_retail_analysis.ipynb</span>
 </div>
 
 <div class="krow">
@@ -153,7 +146,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       </div>
       <div class="kt-val" style="color:#633806">GBP 5.19</div>
       <div class="kt-lbl">Avg Order Value</div>
-      <span class="kt-delta" style="background:#FAEEDA;color:#633806">▲ Clubcard +8% uplift</span>
+      <span class="kt-delta" style="background:#FAEEDA;color:#633806">Clubcard +1.3% per order</span>
     </div>
   </div>
 </div>
@@ -168,51 +161,51 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <canvas id="monthly" role="img" aria-label="Monthly revenue bar and line chart for 2023. December peaks at GBP 6,516.">Monthly revenue for all 12 months. December peaks at GBP 6,516. February is lowest at GBP 5,361.</canvas>
     </div>
     <div class="leg">
-      <div class="li"><div class="ld" style="background:#185FA5"></div>Above avg (GBP 5,927)</div>
+      <div class="li"><div class="ld" style="background:#185FA5"></div>Above avg (GBP 6,009)</div>
       <div class="li"><div class="ld" style="background:#B5D4F4"></div>Below avg</div>
       <div class="li"><div class="ldc" style="background:#0C447C"></div>Trend line</div>
       <div class="li"><div class="ld" style="background:#ccc;border:1px dashed #999"></div>Annual average</div>
     </div>
-    <div class="ib"><b>Finding:</b> December is 21% above the annual average — stock build and staffing plans should begin in October. February is the weakest trading month and a candidate for targeted promotional activity.</div>
+    <div class="ib"><b>Finding:</b> December is the peak at GBP 6,516, 8.4% above the monthly average of GBP 6,009. February is the weakest month at GBP 5,361 and a candidate for targeted promotions. Overall the year is fairly flat: the peak is only 1.22× the low.</div>
   </div>
 </div>
 
 <div class="r2">
   <div class="card">
     <div class="ct">Seasonal Revenue Shape</div>
-    <div class="cs">Area fill shows the seasonal curve — February low to December peak</div>
+    <div class="cs">Area fill shows the seasonal curve: February low, December peak</div>
     <div style="position:relative;height:195px">
       <canvas id="area" role="img" aria-label="Area chart of monthly revenue showing seasonal shape. February dips then climbs to December peak.">Seasonal revenue shape from January to December 2023.</canvas>
     </div>
     <div class="leg">
       <div class="li"><div class="ld" style="background:#185FA5"></div>Monthly revenue</div>
-      <div class="li"><div class="ld" style="background:#ccc;border:1px dashed #999"></div>Annual avg GBP 5,927</div>
+      <div class="li"><div class="ld" style="background:#ccc;border:1px dashed #999"></div>Monthly avg GBP 6,009</div>
     </div>
-    <div class="ib"><b>Recommendation:</b> Target February with promotional activity. Scale capacity from October for the Q4 demand surge.</div>
+    <div class="ib"><b>Recommendation:</b> Target February with promotional activity. Build stock ahead of December, the strongest month.</div>
   </div>
   <div class="card">
     <div class="ct">Revenue by Category</div>
     <div class="cs">Share of GBP 72,103 total — hover for exact GBP value</div>
     <div class="donut-out">
       <div class="donut-wrap">
-        <canvas id="donut" width="170" height="195" role="img" aria-label="Donut chart of revenue by category. Meat and Fish leads at 20.3 percent.">8 product categories. Meat and Fish leads at 20.3% with GBP 14,636.</canvas>
+        <canvas id="donut" width="170" height="195" role="img" aria-label="Donut chart of revenue by category. Meat and Fish leads at 20.3 percent.">8 product categories. Meat and Fish leads at 20.3% with GBP 14,656.</canvas>
         <div class="donut-ctr">
           <div class="donut-ctr-v">GBP 72k</div>
           <div class="donut-ctr-s">8 categories</div>
         </div>
       </div>
       <div class="cat-leg">
-        <div class="cat-row"><div class="cat-dot" style="background:#042C53"></div><div class="cat-name">Meat &amp; Fish</div><div class="cat-pct">20.3%</div><div class="cat-val">GBP 14,636</div></div>
-        <div class="cat-row"><div class="cat-dot" style="background:#185FA5"></div><div class="cat-name">Grocery</div><div class="cat-pct">15.6%</div><div class="cat-val">GBP 11,248</div></div>
-        <div class="cat-row"><div class="cat-dot" style="background:#534AB7"></div><div class="cat-name">Household</div><div class="cat-pct">14.7%</div><div class="cat-val">GBP 10,599</div></div>
-        <div class="cat-row"><div class="cat-dot" style="background:#378ADD"></div><div class="cat-name">Drinks</div><div class="cat-pct">12.1%</div><div class="cat-val">GBP 8,724</div></div>
-        <div class="cat-row"><div class="cat-dot" style="background:#85B7EB"></div><div class="cat-name">Frozen</div><div class="cat-pct">10.7%</div><div class="cat-val">GBP 7,715</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#042C53"></div><div class="cat-name">Meat &amp; Fish</div><div class="cat-pct">20.3%</div><div class="cat-val">GBP 14,656</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#185FA5"></div><div class="cat-name">Grocery</div><div class="cat-pct">15.6%</div><div class="cat-val">GBP 11,261</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#534AB7"></div><div class="cat-name">Household</div><div class="cat-pct">14.7%</div><div class="cat-val">GBP 10,592</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#378ADD"></div><div class="cat-name">Drinks</div><div class="cat-pct">12.1%</div><div class="cat-val">GBP 8,691</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#85B7EB"></div><div class="cat-name">Frozen</div><div class="cat-pct">10.7%</div><div class="cat-val">GBP 7,712</div></div>
         <div class="cat-row"><div class="cat-dot" style="background:#1D9E75"></div><div class="cat-name">H &amp; Beauty</div><div class="cat-pct">10.6%</div><div class="cat-val">GBP 7,643</div></div>
-        <div class="cat-row"><div class="cat-dot" style="background:#5DCAA5"></div><div class="cat-name">Fresh Produce</div><div class="cat-pct">8.5%</div><div class="cat-val">GBP 6,129</div></div>
-        <div class="cat-row"><div class="cat-dot" style="background:#B5D4F4"></div><div class="cat-name">Bakery</div><div class="cat-pct">7.5%</div><div class="cat-val">GBP 5,409</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#5DCAA5"></div><div class="cat-name">Fresh Produce</div><div class="cat-pct">8.5%</div><div class="cat-val">GBP 6,125</div></div>
+        <div class="cat-row"><div class="cat-dot" style="background:#B5D4F4"></div><div class="cat-name">Bakery</div><div class="cat-pct">7.5%</div><div class="cat-val">GBP 5,423</div></div>
       </div>
     </div>
-    <div class="ib"><b>Finding:</b> Meat &amp; Fish contributes 20.3% of network revenue but carries the 2nd highest cancellation rate — the largest single productivity improvement opportunity.</div>
+    <div class="ib"><b>Finding:</b> Meat &amp; Fish contributes 20.3% of network revenue but has the 2nd highest cancellation rate (9.5%), costing an estimated GBP 1,544, the most of any category. It is the largest single improvement opportunity.</div>
   </div>
 </div>
 
@@ -223,9 +216,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
     <div class="ct">Cancellation Rate by Category</div>
     <div class="cs">Red = above 7.5% network average &nbsp;·&nbsp; Green = within target</div>
     <div style="position:relative;height:215px">
-      <canvas id="cancel" role="img" aria-label="Horizontal bar chart of cancellation rates. Health and Beauty worst at 10.0 percent in red.">Health and Beauty 10.0%, Meat and Fish 9.5%, Household 8.8% exceed the network average.</canvas>
+      <canvas id="cancel" role="img" aria-label="Horizontal bar chart of cancellation rates. Health and Beauty worst at 10.0 percent in red.">Health and Beauty 10.0%, Meat and Fish 9.5%, Household 8.8%, Frozen 8.1% and Fresh Produce 8.0% exceed the network average.</canvas>
     </div>
-    <div class="ib"><b>Action required:</b> 3 categories exceed the network average. Audit stock availability for Health &amp; Beauty, Meat &amp; Fish, and Household. Implement automated alerting when any category exceeds 10%.</div>
+    <div class="ib"><b>Action required:</b> 5 categories exceed the 7.5% network average. Cancellations cost an estimated GBP 6,105 in the year. Audit stock availability for Health &amp; Beauty, Meat &amp; Fish and Household first, and alert automatically when any category exceeds 10%.</div>
   </div>
   <div class="card">
     <div class="ct">Store Performance</div>
@@ -235,27 +228,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
       <div class="li"><div class="ldc" style="background:#E24B4A"></div>Above network avg</div>
       <div class="li"><div class="ldc" style="background:#1D9E75"></div>Within target</div>
     </div>
-    <div class="ib"><b>Finding:</b> Welwyn Garden City leads revenue at GBP 14,972 but carries an 8.5% cancellation rate — the highest revenue and highest improvement potential store in the network.</div>
+    <div class="ib"><b>Finding:</b> Welwyn Garden City leads revenue at GBP 14,972 with a 7.3% cancellation rate, just under the network average. Hemel Hempstead (8.6%) and Luton (8.4%) have the most cancellations; St Albans (6.5%) has the fewest and is the benchmark to learn from.</div>
   </div>
   <div class="card">
     <div class="ct">Day-of-Week Trading Pattern</div>
-    <div class="cs">Darker blue = higher revenue &nbsp;·&nbsp; Saturday is peak trading day</div>
+    <div class="cs">Average revenue per trading day &nbsp;·&nbsp; darkest = highest</div>
     <div style="position:relative;height:215px">
-      <canvas id="daybar" role="img" aria-label="Vertical gradient bar chart by day of week. Saturday darkest at highest revenue. Monday lightest at lowest.">Saturday is the highest revenue day. Monday is the lowest. Weekends drive peak volume.</canvas>
+      <canvas id="daybar" role="img" aria-label="Bar chart of average revenue per trading day. Sunday highest at GBP 201, Friday lowest at GBP 194.">Sunday averages GBP 201 per day and Friday GBP 194, a gap of only 3.6%.</canvas>
     </div>
-    <div class="ib"><b>Recommendation:</b> Align delivery schedules and staffing rotas to weekend demand concentration. Monday–Wednesday are consistently below the daily average.</div>
+    <div class="ib"><b>Finding:</b> Trading is almost flat across the week: the best day (Sunday) is only 3.6% above the weakest (Friday). Staffing and deliveries can stay even across the week; there is no strong weekend peak to plan around.</div>
   </div>
 </div>
 
 <div class="footer">
-  <b>Tesco Retail Productivity Dashboard</b> &nbsp;·&nbsp; Full Year 2023 &nbsp;·&nbsp; 8 Hertfordshire Stores &nbsp;·&nbsp; 15,000 Transactions &nbsp;·&nbsp; Analyst: <b>Praneet Sivakumar</b> &nbsp;·&nbsp; Python &nbsp;·&nbsp; Pandas &nbsp;·&nbsp; Tableau &nbsp;·&nbsp; Chart.js
+  <b>Tesco Retail Productivity Dashboard</b> &nbsp;·&nbsp; Full Year 2023 &nbsp;·&nbsp; 8 Hertfordshire Stores &nbsp;·&nbsp; 15,000 Transactions &nbsp;·&nbsp; Analyst: <b>Praneet Sivakumar</b> &nbsp;·&nbsp; Python &nbsp;·&nbsp; Pandas &nbsp;·&nbsp; Chart.js &nbsp;·&nbsp; Simulated data, not affiliated with Tesco
 </div>
 
 </div>
 <script>
 const M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const R=[5539,5361,5765,5878,5910,6021,6180,6050,5820,5890,6190,6516];
-const AV=5927;
+const R=[6032,5361,5889,5873,6196,5867,6118,6346,5851,6326,5729,6516];
+const AV=6009;
 const tc='#adb5bd';
 const gc='rgba(0,0,0,0.04)';
 const ft={size:11,family:"-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif"};
@@ -276,17 +269,17 @@ new Chart(document.getElementById('donut'),{type:'doughnut',data:{labels:['Meat 
 const cR=[10.0,9.5,8.8,8.1,8.0,6.0,5.6,5.2];
 new Chart(document.getElementById('cancel'),{type:'bar',data:{labels:['H & Beauty','Meat & Fish','Household','Frozen','Fresh Prod','Bakery','Grocery','Drinks'],datasets:[{data:cR,backgroundColor:cR.map(r=>r>7.5?'#E24B4A':'#1D9E75'),borderRadius:5,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>ctx.parsed.x.toFixed(1)+'% cancellation rate'}}},scales:{x:{grid:{color:gc},max:12,ticks:{color:tc,font:ft,callback:v=>v+'%'}},y:{grid:{display:false},ticks:{color:tc,font:ft}}}}});
 
-[{n:'Welwyn GC',rev:14972,cr:8.5},{n:'St Albans',rev:11206,cr:7.9},{n:'Hatfield',rev:11015,cr:7.6},{n:'Stevenage',rev:8740,cr:8.2},{n:'Luton',rev:8572,cr:7.4},{n:'Watford',rev:6966,cr:6.8},{n:'Hemel H',rev:5560,cr:7.3},{n:'Hertford',rev:5073,cr:7.1}].forEach(s=>{
+[{n:'Welwyn GC',rev:14972,cr:7.3},{n:'St Albans',rev:11206,cr:6.5},{n:'Hatfield',rev:11015,cr:7.6},{n:'Stevenage',rev:8740,cr:7.3},{n:'Luton',rev:8572,cr:8.4},{n:'Watford',rev:6966,cr:7.4},{n:'Hemel H',rev:5560,cr:8.6},{n:'Hertford',rev:5073,cr:7.0}].forEach(s=>{
   const p=Math.round(s.rev/14972*100);
   const bc=s.rev>11000?'#042C53':s.rev>9000?'#185FA5':s.rev>7000?'#378ADD':'#85B7EB';
   const cc=s.cr>7.5?'#E24B4A':'#1D9E75';
   const el=document.createElement('div');el.className='sr';
-  el.innerHTML=`<div class="sr-name">${s.n}</div><div class="sr-track"><div class="sr-fill" style="width:${p}%;background:${bc}"><span class="sr-val">GBP ${(s.rev/1000).toFixed(1)}k</span></div></div><div class="sr-cr" style="color:${cc}">${s.cr}%</div>`;
+  el.innerHTML=`<div class="sr-name">${s.n}</div><div class="sr-track"><div class="sr-fill" style="width:${p}%;background:${bc}"><span class="sr-val">GBP ${(s.rev/1000).toFixed(1)}k</span></div></div><div class="sr-cr" style="color:${cc}">${s.cr.toFixed(1)}%</div>`;
   document.getElementById('storeRows').appendChild(el);
 });
 
-const dv=[8800,9200,9500,9800,10200,12400,12200],mx=Math.max(...dv);
-new Chart(document.getElementById('daybar'),{type:'bar',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{data:dv,backgroundColor:dv.map(v=>{const i=v/mx;return i>.97?'#042C53':i>.87?'#185FA5':i>.77?'#378ADD':i>.67?'#85B7EB':'#B5D4F4'}),borderRadius:7,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'GBP '+ctx.parsed.y.toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{color:tc,font:ft}},y:{grid:{color:gc},ticks:{color:tc,font:ft,callback:v=>'GBP '+(v/1000).toFixed(0)+'k'}}}}});
+const dv=[196,198,196,196,194,200,201],mx=Math.max(...dv);
+new Chart(document.getElementById('daybar'),{type:'bar',data:{labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],datasets:[{data:dv,backgroundColor:dv.map(v=>v===mx?'#042C53':'#85B7EB'),borderRadius:7,borderSkipped:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'GBP '+ctx.parsed.y.toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{color:tc,font:ft}},y:{grid:{color:gc},ticks:{color:tc,font:ft,callback:v=>'GBP '+v}}}}});
 </script>
 </body>
 </html>
