@@ -1,148 +1,68 @@
-# Tesco Retail Productivity Analyser
+# Retail Store Productivity Analysis (Tesco-style, simulated data)
 
-## Overview
+> **Simulated data.** I generated all 15,000 transactions myself to model a year of trading across 8 Hertfordshire supermarkets. It is **not real Tesco data**, and this project is not affiliated with Tesco. The store names, categories and Clubcard field are there to make the scenario feel like the stores I worked in.
 
-This project delivers end-to-end retail productivity analysis for Tesco's Operations Development team. Using transactional data from 8 Hertfordshire stores across 2023, it identifies revenue patterns, fulfilment performance gaps, and store-level productivity opportunities — translating raw data into clear, actionable business recommendations for operational planning.
+## The business question
 
----
+**Where is a supermarket network losing revenue, and what should store operations plan around?**
 
-## Business Questions
+I answer it in five parts: which categories drive revenue, how sales move through the year, where cancellations happen, which stores and customers matter most, and which days trade strongest.
 
-1. Which product categories drive the most revenue and how is performance changing over time?
-2. What is the network cancellation rate and where are the biggest fulfilment gaps?
-3. Who are the highest-value customers and what drives their spend?
-4. How does store performance vary across the network?
-5. What seasonal and day-of-week patterns should operations plan around?
+## What I found
 
----
-
-## Tools & Technologies
-
-| Tool | Purpose |
+| | Result (full year 2023, simulated) |
 |---|---|
-| Python 3 | Core analysis and automation |
-| Pandas | Data preparation and KPI calculation |
-| Matplotlib & Seaborn | Statistical visualisation |
-| Tableau Public | Interactive operational dashboard |
-| Chart.js | Standalone web dashboard |
-| Jupyter Notebook | Analysis and reporting environment |
+| **Revenue** | £72,103 from 13,882 fulfilled orders; average order £5.19 |
+| **Seasonality** | December is the peak (£6,516) and February the low (£5,361): a 1.22× swing around a £6,009 monthly average |
+| **Cancellations** | 7.5% of orders (1,118) were cancelled. Health & Beauty is worst at 10.0%, then Meat & Fish 9.5% and Household 8.8% |
+| **Top category** | Meat & Fish brings in 20.3% of revenue, so it is both the biggest earner and the second-worst for cancellations |
+| **Stores** | Welwyn Garden City leads on revenue (£14,972). Hemel Hempstead (8.6%) and Luton (8.4%) have the highest cancellation rates; St Albans the lowest (6.5%) |
+| **Customers** | The top 10% of customers bring in 22.4% of revenue |
+| **Clubcard** | Members spend only 1.4% more per order (£5.22 vs £5.15), so loyalty status alone barely changes basket size |
+| **Days** | Sunday is the strongest trading day; Friday the weakest |
 
----
+**What I'd recommend:** fix availability in Meat & Fish first, because it combines high revenue with a high cancellation rate. Review fulfilment at Hemel Hempstead and Luton using St Albans as the benchmark. Plan stock build and staffing around December and weekends, and use promotions to lift February.
 
-## Project Structure
+![Monthly revenue trend, 2023](images/monthly_revenue.png)
 
-```
-tesco-retail-productivity/
-│
-├── data/
-│   └── tesco_retail_data.csv          # 15,000 transactions, 12 fields
-│
-├── tesco_retail_analysis.ipynb        # Full analysis notebook
-├── tesco_analytics_dashboard.html     # Standalone interactive dashboard
-└── README.md
-```
+<details>
+<summary>More charts</summary>
 
----
+![Revenue by product category](images/revenue_by_category.png)
+![Store performance: revenue and cancellation rate](images/store_performance.png)
 
-## Dataset
+</details>
 
-| Field | Description |
+## Stack
+
+Python (pandas, NumPy, Matplotlib, seaborn) in a Jupyter notebook · a standalone HTML dashboard built with Chart.js
+
+## What's in the repo
+
+| Path | What it is |
 |---|---|
-| `transaction_id` | Unique transaction reference |
-| `date` | Transaction date (Jan–Dec 2023) |
-| `store_location` | Store name across 8 Hertfordshire locations |
-| `customer_id` | Customer reference (3,000 unique customers) |
-| `product_name` | Product name |
-| `category` | Product category (8 categories) |
-| `quantity` | Units per transaction |
-| `unit_price` | Price per unit (GBP) |
-| `total_amount` | Transaction revenue (GBP 0.00 for cancellations) |
-| `status` | Fulfilled / Cancelled |
-| `payment_method` | Contactless, Card, Cash, Clubcard Pay+ |
-| `clubcard_member` | Yes / No |
+| `tesco_retail_analysis.ipynb` | The full analysis in 11 sections, from loading and cleaning to recommendations |
+| `data/tesco_retail_data.csv` | The simulated dataset: 15,000 rows, 12 columns (transaction, date, store, customer, product, category, quantity, price, amount, status, payment method, Clubcard) |
+| `tesco_analytics_dashboard.html` | Interactive dashboard; open it in any browser |
+| `images/` | Charts exported from the notebook |
 
----
-
-## Key Findings & Recommendations
-
-### Revenue & Seasonality
-- Full year network revenue: **GBP 72,103** across 13,882 fulfilled orders
-- December peaks at GBP 6,516 — **21% above annual average**
-- February is the weakest trading month at GBP 5,361
-- **Recommendation:** Initiate stock build from October. Target February with promotional activity to lift the weakest trading period.
-
-### Cancellation Rate
-- Network cancellation rate: **7.5%** — 1,118 lost orders
-- Health & Beauty: **10.0%** — highest in the network
-- Meat & Fish: **9.5%** · Household: **8.8%** — both above network average
-- **Recommendation:** Audit stock availability in the top 3 categories. Implement automated weekly alerting when category cancel rate exceeds 10%.
-
-### Customer Value
-- Clubcard members spend **8% more per order** on average
-- Top 10% of customers represent a disproportionate share of total revenue
-- **Recommendation:** Activate personalised Clubcard offers targeting high-value customers in their top spend category.
-
-### Store Performance
-- Welwyn Garden City leads the network at GBP 14,972 revenue
-- Welwyn GC also carries an **8.5% cancellation rate** — above the 7.5% network average
-- **Recommendation:** Prioritise fulfilment process review at high-revenue / high-cancellation stores. Share operational best practices from the lowest-cancel locations across the network.
-
-### Day-of-Week Patterns
-- Saturday is the peak trading day across all stores
-- Monday is consistently the lowest volume day
-- **Recommendation:** Align staffing rotas, delivery schedules, and stock replenishment to reflect weekend demand concentration.
-
----
-
-## Analysis Notebook — Section Summary
-
-| Section | Content |
-|---|---|
-| 1 | Environment setup and library imports |
-| 2 | Data loading, schema inspection, quality assessment |
-| 3 | Data cleaning — datetime conversion, feature engineering, status segmentation |
-| 4 | Headline KPIs — revenue, orders, cancellation rate, average order value |
-| 5 | Revenue by category — ranked analysis with share breakdown |
-| 6 | Monthly revenue trend — time series with MoM growth |
-| 7 | Cancellation analysis — by category and store, estimated revenue impact |
-| 8 | Customer analysis — spend distribution, value segmentation, Clubcard uplift |
-| 9 | Store performance — revenue and fulfilment rate comparison |
-| 10 | Trading patterns — weekly trend, rolling average, day-of-week volume |
-| 11 | Summary findings and prioritised business recommendations |
-
----
-
-## Tableau Dashboard
-
-Five-view interactive operational dashboard:
-
-1. **Monthly Trend** — seasonal revenue shape across all 12 months with average reference
-2. **Revenue by Category** — ranked revenue contribution by product category
-3. **Cancellation Rate** — diverging colour bars showing performance vs network average
-4. **Store Performance** — revenue comparison across all 8 locations
-5. **Day of Week** — gradient intensity bars showing daily trading patterns
-
----
-
-## Running the Notebook
+## How to run it
 
 ```bash
-# Install dependencies
+git clone https://github.com/PraneetSivakumar/Tesco-Retail-Analysis.git
+cd Tesco-Retail-Analysis
 pip install pandas numpy matplotlib seaborn jupyter
-
-# Launch
-jupyter notebook
-
-# Open tesco_retail_analysis.ipynb
-# Run: Kernel → Restart & Run All
+jupyter notebook tesco_retail_analysis.ipynb
 ```
 
----
+Then choose **Kernel → Restart & Run All**.
+
+## Known issues (being fixed)
+
+- The "estimated revenue lost to cancellations" figure in section 7 comes out blank because of an index mismatch in the code, so I do not quote it above.
+- Some figures hard-coded in the HTML dashboard (for example the Clubcard uplift and the monthly bars) do not yet match the notebook. **Trust the notebook numbers.**
 
 ## Contact
 
-**Praneet Sivakumar**  
-MSc Data Science — University of Hertfordshire  
-Email: connect.with.praneet@gmail.com  
-LinkedIn: linkedin.com/in/praneetsivakumar  
-GitHub: github.com/praneetsivakumar
+**Praneet Sivakumar** · MSc Data Science (Distinction), University of Hertfordshire
+[LinkedIn](https://www.linkedin.com/in/praneetsivakumar) · [Portfolio](https://www.praneetsivakumar.com) · connect.with.praneet@gmail.com
